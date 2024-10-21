@@ -113,15 +113,15 @@ git push -u origin main
 В логе можно отследить последний коммит - у него после хеша стоит слово HEAD
 
 # Статусы файлов
-Фалы меняют свой статус под действием изменений/обавлений фалов, команд git add и git commit. Если файл добавлен в хранилище, до команды git add он будет считаться Untracked. Если файл изменен в хранилище, то до команды git add но будет считаться modified.После git add фал переходит в остояние staged + tracked, после git commit остается только в статусе tracked
+Фалы меняют свой статус под действием изменений/обавлений фалов, команд `git add` и `git commit`. Если файл добавлен в хранилище, до команды `git add` он будет считаться `Untracked`. Если файл изменен в хранилище, то до команды `git add` но будет считаться `modified`. После `git add` фал переходит в остояние `staged + tracked`, после `git commit` остается только в статусе `tracked`
 
 ```mermaid
 graph LR
 %% Для нового файла в хранилище:
-untracked --"git add" --> staged tracked --"git commit"--> tracked
+untracked --"git add" --> staged+tracked --"git commit"--> tracked
 
 %% Для измененного файла в хранилище:
-modified tracked --"git add" --> staged tracked --"git commit"--> tracked
+modified+tracked --"git add" --> staged+tracked --"git commit"--> tracked
 ```
 
 # Сообщения к коммитам
